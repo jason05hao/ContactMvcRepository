@@ -1,0 +1,56 @@
+<script id="tmpl-ContactView" type="text/html">
+  <div class="ContactView">
+    <div class="card">
+      <div class="card-face card-front">
+        <header>
+          <h2>{{contact.firstName}} {{contact.lastName}}</h2>
+        </header>
+        <section class="heading">
+          <label>Contact Detail</label>
+        </section>
+        <section class="content">
+            <div class="row">
+                <div class="col-sm-3"><label>Email</label></div>
+                <div class="col-sm-3"><span>{{contact.email}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><label>Website</label></div>
+                <div class="col-sm-3"><span>{{contact.website}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-3"><label>Phone Number</label></div>
+                <div class="col-sm-3"><span>{{contact.phoneNumber}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><label>Address</label></div>
+                <div class="col-sm-3"><span>{{contact.address}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><label>City</label></div>
+                <div class="col-sm-3"><span>{{contact.city}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><label>State</label></div>
+                <div class="col-sm-3"><span>{{contact.state}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3"><label>Country</label></div>
+                <div class="col-sm-3"><span>{{contact.country}}</span></div>
+                <div class="col-sm-3"></div>
+            </div>
+        </section>
+      </div> <!-- /.card-front -->
+      
+      <div class="card-face card-back">
+        
+      </div>
+    </div> <!-- /.card -->
+  </div>
+</script>

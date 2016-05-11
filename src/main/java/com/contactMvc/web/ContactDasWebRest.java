@@ -27,13 +27,6 @@ import com.contactMvc.AppException;
 @Singleton
 public class ContactDasWebRest {
 
-	@WebPost("/das-create-Contact")
-	public WebResponse createContact(@WebModel Contact contact){
-		Contact entity = new Contact(1L, "Jason", "Hao", "jason05.hao@gmail.com", "", "647-947-9366", "19 Selwyn road", "Richmond Hill", "Ontario", "Canada");
-		// Copy contact to entity
-		return WebResponse.success(entity);
-	}
-
 	@WebGet("/das-get-Contact")
 	public WebResponse getContact(@WebParam("id") Long id){
 		// read the contact
@@ -55,21 +48,5 @@ public class ContactDasWebRest {
 		list.add(new Contact(7L, "Jason7", "Hao", "jason057.hao@gmail.com", "", "647-947-93667", "197 Selwyn road", "Richmond Hill", "Ontario", "Canada"));
 		list.add(new Contact(8L, "Jason8", "Hao", "jason058.hao@gmail.com", "", "647-947-93668", "198 Selwyn road", "Richmond Hill", "Ontario", "Canada"));
 		return WebResponse.success(list);
-	}
-
-	@WebPost("/das-update-Contact")
-	public WebResponse updateEntity(@WebModel Contact contact){
-		Contact entity = new Contact(contact.getId(), contact.getFirstName(), contact.getLastName(), contact.getEmail(), contact.getWebsite(), contact.getPhoneNumber(), contact.getAddress(), contact.getCity(), contact.getState(), contact.getCountry());
-		return WebResponse.success(entity);
-	}
-
-
-	@WebPost("/das-delete-Contact-{id}")
-	public WebResponse deleteContact(@PathVar("id") Long id){
-		if (id > 0 && id < 9){
-			return WebResponse.success(id);
-		}else{
-			return WebResponse.fail(new AppException("Cannot delete Contact with id " + id));
-		}
 	}
 }
